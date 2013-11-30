@@ -38,11 +38,13 @@ How-to-use
         - (void) fbAuthWindowWillShow: (id) sender;
 
 4.  Request an authorization token:
-		````````
+
+		```
         [fself.facebook authenticate:[NSSet setWithObjects: @"read_stream", @"publish_stream", nil] callback:^(NSDictionary *result) {
         
         }];
-        ````````
+        ```
+        
     * Just list the permissions you need in an set, or [NSSet set] if you don't require special permissions.
     * There is a [list of permissions](http://developers.facebook.com/docs/authentication/permissions).
     * Callback will get called with a dictionary. If `result is not nil, the authorization request was successful.
