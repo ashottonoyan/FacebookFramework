@@ -39,7 +39,7 @@ How-to-use
 
 4\.  Request an authorization token:
 		
-   [fself.facebook authenticate:[NSSet setWithObjects: @"read_stream", @"publish_stream", nil] callback:^(NSDictionary *result) {
+    [self.facebook authenticate:[NSSet setWithObjects: @"read_stream", @"publish_stream", nil] callback:^(NSDictionary *result) {
     
     }];
                 
@@ -50,6 +50,7 @@ How-to-use
     * __Note:__ the framework may put up an authorization window from Facebook. Subsequent requests are cached and/or hidden from the user as much as possible.
 
 5\.  Make API requests
+
     * You do not need to provide the URL or authorization token, FacebookFramework takes care of that:
 
 	[self.facebook sendRequest:@"me/friends" params:NSDictionary_params usePostRequest:POST_OR_GET withCompletionBlock:^(NSDictionary *result) {
