@@ -4,7 +4,7 @@ FacebookFramework
 Summary
 -------
 
-FacebookFramework is an Simple and Lightweight framework to easily access Facebook's API.
+FacebookFramework is a Simple and Lightweight framework to easily access Facebook's API.
 
 How-to-use
 ----------
@@ -29,7 +29,9 @@ How-to-use
 
     * Import <FacebookFramework/FacebookFramework.h> where appropriate.
     * Create a new property `Facebook*` and set yourself as the delegate:
+    	```
 			self.facebook = [[Facebook alloc] initWithAppID:APP_ID appSecret:APP_SECRET delegate:self];
+		```
     * Implement the FacebookDelegate protocol:
             @optional    
             - (void) fbAuthWindowWillShow: (id) sender;
