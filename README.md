@@ -17,7 +17,7 @@ How-to-use
 
 2.  Build FacebookFramework.framework
 
-    * Open "FacebookFramework.xcodeproj" and "Build for Archiving" in the Product -> Build menu. This should build both the Debug and Release version. If it does not, check your Build Schemes in Product -> Edit Scheme…
+    * Open "FacebookFramework.xcodeproj" and "Build for Archiving" in the Product -> Build menu. This should build both the Debug and Release version. If it does not, check your Build Schemes in Product -> Edit Scheme… Select Build configuration Release
     * Select "FacebookFramework.framework" in the Finder. It should be in the "Release" folder; you probably don't want to embed the Debug version.
     * Drag it to your "Frameworks" folder in your Project list and add it to the appropriate target. If you want you can select "Copy items into destination group's folder"
     * In your appropriate target, under "Build Settings", select "Runpath Search Paths" in the "Linking" category, and enter "@loader_path/../Resources" (without the quotes). This step is essential for linking, as the Framework is built with a "@rpath" search path, which will be replaced at runtime by your application.
@@ -54,11 +54,11 @@ How-to-use
 5.  Make API requests
     * You do not need to provide the URL or authorization token, FacebookFramework takes care of that:
 
-		```    
-		[self.facebook sendRequest:@"me/friends" params:NSDictionary_params usePostRequest:POST_OR_GET withCompletionBlock:^(NSDictionary *result) {
-	        NSDictionary *resultDictionary = [NSJSONSerialization JSONObjectWithData:result[@"raw"] options:0 error:NULL];			
-		}];
-		```
+	```    
+	[self.facebook sendRequest:@"me/friends" params:NSDictionary_params usePostRequest:POST_OR_GET withCompletionBlock:^(NSDictionary *result) {
+       NSDictionary *resultDictionary = [NSJSONSerialization JSONObjectWithData:result[@"raw"] options:0 error:NULL];			
+    }];
+	```
 
 Special Thanks
 --------------
