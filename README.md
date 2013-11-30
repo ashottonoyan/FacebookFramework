@@ -30,16 +30,19 @@ How-to-use
     * Import ```<FacebookFramework/FacebookFramework.h>``` where appropriate.
     * Create a new property `Facebook*` and set yourself as the delegate:
     	```
-			self.facebook = [[Facebook alloc] initWithAppID:APP_ID appSecret:APP_SECRET delegate:self];
+		self.facebook = [[Facebook alloc] initWithAppID:APP_ID appSecret:APP_SECRET delegate:self];
 		```
     * Implement the FacebookDelegate protocol:
-            @optional    
-            - (void) fbAuthWindowWillShow: (id) sender;
-
+	    ```
+        @optional    
+        - (void) fbAuthWindowWillShow: (id) sender;
+		```
 4.  Request an authorization token:
+		```
         [fself.facebook authenticate:[NSSet setWithObjects: @"read_stream", @"publish_stream", nil] callback:^(NSDictionary *result) {
         
         }];
+        ```
     * Just list the permissions you need in an set, or [NSSet set] if you don't require special permissions.
     * There is a [list of permissions](http://developers.facebook.com/docs/authentication/permissions).
     * Callback will get called with a dictionary. If `result is not nil, the authorization request was successful.
@@ -48,9 +51,11 @@ How-to-use
 
 5.  Make API requests
     * You do not need to provide the URL or authorization token, FacebookFramework takes care of that:
-			[self.facebook sendRequest:@"me/friends" params:NSDictionary_params usePostRequest:POST_OR_GET withCompletionBlock:^(NSDictionary *result) {
-		        NSDictionary *resultDictionary = [NSJSONSerialization JSONObjectWithData:result[@"raw"] options:0 error:NULL];			
-			}];
+		```    
+		[self.facebook sendRequest:@"me/friends" params:NSDictionary_params usePostRequest:POST_OR_GET withCompletionBlock:^(NSDictionary *result) {
+	        NSDictionary *resultDictionary = [NSJSONSerialization JSONObjectWithData:result[@"raw"] options:0 error:NULL];			
+		}];
+		```
 
 Special Thanks
 --------------
@@ -61,16 +66,3 @@ Special Thanks
 ----
 Waiting for your questions, contributions and issues :)
 ----
-
-Notes
------
-
-> The sample application requires your Application ID to function properly. The first time you build the application, it will create a (non-versioned) file called `ApplicationID.h`.
-> You __must__ edit this file with your Application ID from [this Facebook page](http://www.facebook.com/developers/apps.php) before the sample app will build.
-
-Tips and Tricks
----------------
-
-* Embedding a framework is easier if you set up a common build folder in Xcode -> Preferences -> Building -> Customized location.
-* Linking frameworks can sometimes be a black art. You may have to add `@loader_path/../Frameworks` to the "Runpath search paths" in Xcode (thanks to Oscar Del Ben for the tip).
-* You can `#define ALWAYS_SHOW_UI` in PhWebViewController.m to help you debug the framework, since by default the framework tries to hide UI as much as possible. 
