@@ -33,12 +33,12 @@ How-to-use
 		self.facebook = [[Facebook alloc] initWithAppID:APP_ID appSecret:APP_SECRET delegate:self];
 		```
     * Implement the FacebookDelegate protocol:
-	    ```
-        @optional    
+
+        @optional  \n  
         - (void) fbAuthWindowWillShow: (id) sender;
-		```
+
 4.  Request an authorization token:
-		```
+		```obj-c
         [fself.facebook authenticate:[NSSet setWithObjects: @"read_stream", @"publish_stream", nil] callback:^(NSDictionary *result) {
         
         }];
