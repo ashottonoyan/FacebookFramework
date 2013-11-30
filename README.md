@@ -46,7 +46,7 @@ How-to-use
     * Just list the permissions you need in an set, or [NSSet set] if you don't require special permissions.
     * There is a [list of permissions](http://developers.facebook.com/docs/authentication/permissions).
     * Callback will get called with a dictionary. If `result is not nil, the authorization request was successful.
-    * If PhFacebook needs to display some UI (such as the Facebook Authentication dialog), your delegate's `fbAuthWindowWillShow:` will get called. Take this opportunity to notify the user via a Dock bounce, for instance.
+    * If FacebookFramework needs to display some UI (such as the Facebook Authentication dialog), your delegate's `fbAuthWindowWillShow:` will get called. Take this opportunity to notify the user via a Dock bounce, for instance.
     * __Note:__ the framework may put up an authorization window from Facebook. Subsequent requests are cached and/or hidden from the user as much as possible.
 
 5\.  Make API requests
