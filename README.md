@@ -4,7 +4,7 @@ FacebookFramework
 Summary
 -------
 
-FacebookFramework is a Simple and Lightweight framework to easily access Facebook's API.
+FacebookFramework is a Simple and Lightweight framework for Cocoa (OS X, MacOSX) to easily access Facebook's API.
 
 How-to-use
 ----------
