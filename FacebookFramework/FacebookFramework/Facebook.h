@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+    PUT,
+    DELETE,
+    POST,
+    GET,
+} RequestType;
+
 typedef void (^CompletionBlock)(NSDictionary *result);
 
 @protocol FacebookDelegate <NSObject>
@@ -25,10 +32,9 @@ typedef void (^CompletionBlock)(NSDictionary *result);
 
 - (void)invalidate;
 
+- (void)sendRequest:(NSString*)request params:(NSDictionary*)params useRequestType:(RequestType)requestType withCompletionBlock:(CompletionBlock)block;
 
-- (void) sendRequest: (NSString*) request params: (NSDictionary*) params usePostRequest: (BOOL) postRequest withCompletionBlock:(CompletionBlock) block;
-
-- (void) sendFQLRequest: (NSString*) query withCompletionBlock:(CompletionBlock) block;
+- (void)sendFQLRequest:(NSString*)query withCompletionBlock:(CompletionBlock)block;
 
 
 @end

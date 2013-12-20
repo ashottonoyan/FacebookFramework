@@ -331,7 +331,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FacebookFramework/FacebookFramework-Prefix.pch";
 				INFOPLIST_FILE = "FacebookFramework/FacebookFramework-Info.plist";
-				INSTALL_PATH = "@loader_path/../Resources";
+				INSTALL_PATH = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
@@ -348,7 +348,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FacebookFramework/FacebookFramework-Prefix.pch";
 				INFOPLIST_FILE = "FacebookFramework/FacebookFramework-Info.plist";
-				INSTALL_PATH = "@loader_path/../Resources";
+				INSTALL_PATH = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;

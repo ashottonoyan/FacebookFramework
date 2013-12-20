@@ -49,7 +49,12 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
 
 - (void)authenticate:(NSSet*)permissions callback:(CompletionBlock)callback
 {
-    self.grantedPerms = permissions;
+    if(_accessToken) {
+        callback(@{@"accessToken":self.accessToken});
+        return;
+    }
+    
+    _grantedPerms = permissions;
     [[NSUserDefaults standardUserDefaults] setObject:[self.grantedPerms allObjects] forKey:PERMISSIONS_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
@@ -79,7 +84,7 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
                    kFBLoginSuccessURL];
     }
     
-    
+    NSLog(@"authURL %@",authURL);
     [self.webView setMainFrameURL:authURL];
     [self.window setContentView:self.webView];
     
@@ -121,7 +126,7 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
         if (self.delegate && [self.delegate respondsToSelector:@selector(fbAuthWindowWillShow:)] && ![self.window isVisible]) {
             
             [self.window center];
-            [_window makeKeyAndOrderFront:self];
+            [_window makeKeyAndOrderFront:nil];
             [self.delegate fbAuthWindowWillShow:self];
         }
         
@@ -130,6 +135,8 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
 
 - (void)invalidate
 {
+    _accessToken = nil;
+    
     NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     NSArray *cookies = [[cookieStorage cookiesForURL:[NSURL URLWithString:kFBURL] ] arrayByAddingObjectsFromArray:[cookieStorage cookiesForURL: [NSURL URLWithString:kFBSecureURL]]];
     
@@ -160,14 +167,14 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
     return params;
 }
 
-- (void)sendRequest:(NSString *)request params:(NSDictionary *)params usePostRequest:(BOOL)postRequest withCompletionBlock:(CompletionBlock)block
+- (void)sendRequest:(NSString*)request params:(NSDictionary*)params useRequestType:(RequestType)requestType withCompletionBlock:(CompletionBlock)block
 {
     if (_accessToken)
 	{
 		NSString *str;
         
         
-		if (postRequest)
+		if (requestType == POST)
 		{
 			str = [NSString stringWithFormat: kFBGraphApiPostURL, request];
 		}
@@ -185,7 +192,7 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
 		NSMutableString *strPostParams = nil;
 		if (params != nil)
 		{
-			if (postRequest)
+            if (requestType == POST)
 			{
 				strPostParams = [NSMutableString stringWithFormat: @"access_token=%@", _accessToken];
 				for (NSString *p in [params allKeys])
@@ -198,30 +205,45 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
 					[strWithParams appendFormat: @"&%@=%@", p, [params objectForKey: p]];
 				str = strWithParams;
 			}
-		}
+		}    
         
 		NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL: [NSURL URLWithString: str]];
         
-		if (postRequest)
+		if (requestType == POST)
 		{
 			NSData *requestData = [NSData dataWithBytes: [strPostParams UTF8String] length: [strPostParams length]];
 			[req setHTTPMethod: @"POST"];
 			[req setHTTPBody: requestData];
 			[req setValue: @"application/x-www-form-urlencoded" forHTTPHeaderField: @"content-type"];
-		}
+		} else {
+            switch (requestType) {
+                case PUT:
+                    [req setHTTPMethod:@"PUT"];
+                    break;
+                case DELETE:
+                    [req setHTTPMethod:@"DELETE"];
+                    break;
+                case GET:
+                    [req setHTTPMethod:@"GET"];
+                    break;
+                default:
+                    break;
+            }
+        }
         
 		NSURLResponse *response = nil;
 		NSError *error = nil;
 		NSData *data = [NSURLConnection sendSynchronousRequest: req returningResponse: &response error: &error];
         
 		NSString *resultStr = [[NSString alloc] initWithBytesNoCopy: (void*)[data bytes] length: [data length] encoding:NSASCIIStringEncoding freeWhenDone: NO];
+        NSLog(@"result: %@",resultStr);
         
         NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
         if(results[@"error"] && [results[@"error"][@"type"] isEqualToString:@"OAuthException"]) {
             
             [self authenticate:self.grantedPerms callback:^(NSDictionary *result) {
                 
-                [self sendRequest:request params:params usePostRequest:postRequest withCompletionBlock:block];
+                [self sendRequest:request params:params useRequestType:requestType withCompletionBlock:block];
             }];
             
         } else {
@@ -259,7 +281,8 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
         NSString *resultStr = [[NSString alloc] initWithBytesNoCopy: (void*)[data bytes] length: [data length] encoding:NSASCIIStringEncoding freeWhenDone: NO];
         
         NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-        if(results[@"error"] && [results[@"error"][@"type"] isEqualToString:@"OAuthException"]) {
+        NSLog(@"results  %@",results);
+        if([results.class isSubclassOfClass:[NSDictionary class]] && [results objectForKey:@"error"] && [results[@"error"][@"type"] isEqualToString:@"OAuthException"]) {
             
             [self authenticate:self.grantedPerms callback:^(NSDictionary *result) {
                 [self sendFQLRequest:query withCompletionBlock:block];
