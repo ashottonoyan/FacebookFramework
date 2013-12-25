@@ -11,10 +11,11 @@ How-to-use
 
 1.  Create your Facebook app
 	
-	````
     * Go to your [Facebook application page](https://developers.facebook.com/apps/).
     * Select your application in the left-hand column (if you have more than one application) and select Edit App.
     * __Note:__  In section 3 you should use App ID and App Secret	
+
+	````    
     ````
     
 2.  Build FacebookFramework.framework
