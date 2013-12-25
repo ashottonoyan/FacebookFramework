@@ -27,16 +27,17 @@ How-to-use
     * Import <FacebookFramework/FacebookFramework.h> where appropriate.
     * Create a new property `Facebook*` and set yourself as the delegate:
 	
-	````		
-	self.facebook = [[Facebook alloc] initWithAppID:APP_ID appSecret:APP_SECRET delegate:self];
-	````
+		````		
+		self.facebook = [[Facebook alloc] initWithAppID:APP_ID appSecret:APP_SECRET delegate:self];
+		````
 
     * Implement the FacebookDelegate protocol:
 
-	````
-    @optional
-    - (void) fbAuthWindowWillShow: (id) sender;
-    ````
+		````
+    	@optional
+	    - (void) fbAuthWindowWillShow: (id) sender;
+	    ````
+	    
 4.  Request an authorization token:	
 	````
     [self.facebook authenticate:[NSSet setWithObjects: @"read_stream", @"publish_stream", nil] callback:^(NSDictionary *result) {
