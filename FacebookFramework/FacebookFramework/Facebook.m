@@ -11,7 +11,7 @@
 #import "FacebookURLs.h"
 
 const NSInteger WINDOW_WIDTH = 640;
-const NSInteger WINDOW_HEIGHT = 296;
+const NSInteger WINDOW_HEIGHT = 400;
 NSString* const ACCESSTOKEN_KEY = @"FBAuth_accessToken";
 NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
 
@@ -104,8 +104,6 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
                                                    options:NSRegularExpressionSearch];
     
     if (range.location != NSNotFound) {
-        range.location += 13;
-        range.length -= 13;
         NSDictionary *params = [self parseURLParams:_webView.mainFrameURL];
         
         self.accessToken = params.allValues[1];
@@ -241,6 +239,7 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
         NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
         if(results[@"error"] && [results[@"error"][@"type"] isEqualToString:@"OAuthException"]) {
             
+            _accessToken = nil;            
             [self authenticate:self.grantedPerms callback:^(NSDictionary *result) {
                 
                 [self sendRequest:request params:params useRequestType:requestType withCompletionBlock:block];
@@ -284,6 +283,7 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
         NSLog(@"results  %@",results);
         if([results.class isSubclassOfClass:[NSDictionary class]] && [results objectForKey:@"error"] && [results[@"error"][@"type"] isEqualToString:@"OAuthException"]) {
             
+            _accessToken = nil;
             [self authenticate:self.grantedPerms callback:^(NSDictionary *result) {
                 [self sendFQLRequest:query withCompletionBlock:block];
             }];
