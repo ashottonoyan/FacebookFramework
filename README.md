@@ -24,20 +24,18 @@ How-to-use
     * Verify that you can build and run your application and there are no linker or runtime errors.
 
 3.  Prepare to use FacebookFramework.framework
-    * Import <FacebookFramework/FacebookFramework.h> where appropriate.    
+    * Import <FacebookFramework/FacebookFramework.h> where appropriate.        
     * Create a new property `Facebook*` and set yourself as the delegate:        
-    
-            ```objective-c
-	    	self.facebook = [[Facebook alloc] initWithAppID:APP_ID appSecret:APP_SECRET delegate:self];
-    		```    	
-    	
-	* Implement the FacebookDelegate protocol:	
-	
-			```objective-c
-			@optional
-			- (void) fbAuthWindowWillShow: (id) sender;
-			```
-	    
+    	```objective-c		
+		self.facebook = [[Facebook alloc] initWithAppID:APP_ID appSecret:APP_SECRET delegate:self];
+		```                    
+		
+	* Implement the FacebookDelegate protocol:		
+		```objective-c		
+		@optional
+		- (void) fbAuthWindowWillShow: (id) sender;
+		```                    
+
 4.  Request an authorization token:	
 	* Just list the permissions you need in an set, or [NSSet set] if you don't require special permissions.	
 		```objective-c		
