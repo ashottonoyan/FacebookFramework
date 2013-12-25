@@ -39,6 +39,7 @@ How-to-use
     ````
 
 4.   Request an authorization token:	
+
 	````
     [self.facebook authenticate:[NSSet setWithObjects: @"read_stream", @"publish_stream", nil] callback:^(NSDictionary *result) {
     
