@@ -39,14 +39,14 @@ How-to-use
 	    ````
 	    
 4.  Request an authorization token:	
-
-	````		
-    [self.facebook authenticate:[NSSet setWithObjects: @"read_stream", @"publish_stream", nil] callback:^(NSDictionary *result) {
-    	
-	}];
-	````
-                
-    * Just list the permissions you need in an set, or [NSSet set] if you don't require special permissions.
+	* Just list the permissions you need in an set, or [NSSet set] if you don't require special permissions.
+	
+		````		
+	    [self.facebook authenticate:[NSSet setWithObjects: @"read_stream", @"publish_stream", nil] callback:^(NSDictionary *result) {
+    		
+		}];
+		````
+                    
     * There is a [list of permissions](http://developers.facebook.com/docs/authentication/permissions).
     * Callback will get called with a dictionary. If `result is not nil, the authorization request was successful.
     * If FacebookFramework needs to display some UI (such as the Facebook Authentication dialog), your delegate's `fbAuthWindowWillShow:` will get called. Take this opportunity to notify the user via a Dock bounce, for instance.
