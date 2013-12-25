@@ -26,10 +26,13 @@ How-to-use
 3.  Prepare to use FacebookFramework.framework
     * Import <FacebookFramework/FacebookFramework.h> where appropriate.
     * Create a new property `Facebook*` and set yourself as the delegate:    
+    
     	```objective-c
     	self.facebook = [[Facebook alloc] initWithAppID:APP_ID appSecret:APP_SECRET delegate:self];
     	```    	
+    	
 	* Implement the FacebookDelegate protocol:
+	
 		```objective-c
 		@optional
 		- (void) fbAuthWindowWillShow: (id) sender;
