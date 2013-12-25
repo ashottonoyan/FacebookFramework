@@ -25,7 +25,7 @@ How-to-use
     * Drag "FacebookFramework.framework" to this Copy build phase to ensure it is embedded in your application.
     * Verify that you can build and run your application and there are no linker or runtime errors.
 
--   Prepare to use FacebookFramework.framework
+3.   Prepare to use FacebookFramework.framework
 
     * Import <FacebookFramework/FacebookFramework.h> where appropriate.
     * Create a new property `Facebook*` and set yourself as the delegate:
@@ -41,7 +41,7 @@ How-to-use
     - (void) fbAuthWindowWillShow: (id) sender;
     ````
 
--   Request an authorization token:
+4.   Request an authorization token:
 	
 	````
     [self.facebook authenticate:[NSSet setWithObjects: @"read_stream", @"publish_stream", nil] callback:^(NSDictionary *result) {
@@ -55,7 +55,7 @@ How-to-use
     * If FacebookFramework needs to display some UI (such as the Facebook Authentication dialog), your delegate's `fbAuthWindowWillShow:` will get called. Take this opportunity to notify the user via a Dock bounce, for instance.
     * __Note:__ the framework may put up an authorization window from Facebook. Subsequent requests are cached and/or hidden from the user as much as possible.
 
--   Make API requests
+5.   Make API requests
 
     * You do not need to provide the URL or authorization token, FacebookFramework takes care of that:
 
