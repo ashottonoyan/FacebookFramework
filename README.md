@@ -9,13 +9,13 @@ FacebookFramework is a Simple and Lightweight framework for Cocoa (OS X, MacOSX)
 How-to-use
 ----------
 
--   Create your Facebook app
+1.  Create your Facebook app
 	
     * Go to your [Facebook application page](https://developers.facebook.com/apps/).
     * Select your application in the left-hand column (if you have more than one application) and select Edit App.
     * __Note:__  In section 3 you should use App ID and App Secret	
     
--   Build FacebookFramework.framework
+2.   Build FacebookFramework.framework
 
     * Open "FacebookFramework.xcodeproj" and "Build for Archiving" in the Product -> Build menu. This should build both the Debug and Release version. If it does not, check your Build Schemes in Product -> Edit Scheme… Select Build configuration Release
     * Select "FacebookFramework.framework" in the Finder. It should be in the "Release" folder; you probably don't want to embed the Debug version.
