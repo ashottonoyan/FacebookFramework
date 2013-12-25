@@ -84,7 +84,6 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
                    kFBLoginSuccessURL];
     }
     
-    NSLog(@"authURL %@",authURL);
     [self.webView setMainFrameURL:authURL];
     [self.window setContentView:self.webView];
     
@@ -234,7 +233,6 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
 		NSData *data = [NSURLConnection sendSynchronousRequest: req returningResponse: &response error: &error];
         
 		NSString *resultStr = [[NSString alloc] initWithBytesNoCopy: (void*)[data bytes] length: [data length] encoding:NSASCIIStringEncoding freeWhenDone: NO];
-        NSLog(@"result: %@",resultStr);
         
         NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
         if(results[@"error"] && [results[@"error"][@"type"] isEqualToString:@"OAuthException"]) {
@@ -280,7 +278,7 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
         NSString *resultStr = [[NSString alloc] initWithBytesNoCopy: (void*)[data bytes] length: [data length] encoding:NSASCIIStringEncoding freeWhenDone: NO];
         
         NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-        NSLog(@"results  %@",results);
+
         if([results.class isSubclassOfClass:[NSDictionary class]] && [results objectForKey:@"error"] && [results[@"error"][@"type"] isEqualToString:@"OAuthException"]) {
             
             _accessToken = nil;
