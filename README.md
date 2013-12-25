@@ -31,7 +31,6 @@ How-to-use
 		```                    		
 	* Implement the FacebookDelegate protocol:		
 		```		
-		@optional<Enter>
 		- (void) fbAuthWindowWillShow: (id) sender;
 		```                    
 4.  Request an authorization token:	
