@@ -40,11 +40,11 @@ How-to-use
 	    
 4.  Request an authorization token:	
 
-		````
-    	[self.facebook authenticate:[NSSet setWithObjects: @"read_stream", @"publish_stream", nil] callback:^(NSDictionary *result) {
+	````		
+    [self.facebook authenticate:[NSSet setWithObjects: @"read_stream", @"publish_stream", nil] callback:^(NSDictionary *result) {
     	
-	    }];
-    	````
+	}];
+	````
                 
     * Just list the permissions you need in an set, or [NSSet set] if you don't require special permissions.
     * There is a [list of permissions](http://developers.facebook.com/docs/authentication/permissions).
