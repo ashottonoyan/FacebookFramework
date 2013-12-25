@@ -28,8 +28,7 @@ How-to-use
     * Create a new property `Facebook*` and set yourself as the delegate:    
     	```
     	self.facebook = [[Facebook alloc] initWithAppID:APP_ID appSecret:APP_SECRET delegate:self];
-    	```
-    	
+    	```    	
 	* Implement the FacebookDelegate protocol:
 		```
 		@optional
@@ -37,14 +36,12 @@ How-to-use
 		```
 	    
 4.  Request an authorization token:	
-	* Just list the permissions you need in an set, or [NSSet set] if you don't require special permissions.
-	
-		````		
+	* Just list the permissions you need in an set, or [NSSet set] if you don't require special permissions.	
+		```		
 	    [self.facebook authenticate:[NSSet setWithObjects: @"read_stream", @"publish_stream", nil] callback:^(NSDictionary *result) {
     		
 		}];
-		````
-                    
+		```                    
     * There is a [list of permissions](http://developers.facebook.com/docs/authentication/permissions).
     * Callback will get called with a dictionary. If `result is not nil, the authorization request was successful.
     * If FacebookFramework needs to display some UI (such as the Facebook Authentication dialog), your delegate's `fbAuthWindowWillShow:` will get called. Take this opportunity to notify the user via a Dock bounce, for instance.
@@ -52,12 +49,11 @@ How-to-use
 
 5.  Make API requests
     * You do not need to provide the URL or authorization token, FacebookFramework takes care of that:
-
-		````
+		```
 		[self.facebook sendRequest:@"me/friends" params:NSDictionary_params usePostRequest:POST_OR_GET withCompletionBlock:^(NSDictionary *result) {
 	       NSDictionary *resultDictionary = [NSJSONSerialization JSONObjectWithData:result[@"raw"] options:0 error:NULL];			
     	}];
-	    ````
+	    ```
 
 Special Thanks
 --------------
