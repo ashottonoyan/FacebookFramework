@@ -26,13 +26,7 @@ How-to-use
 3.  Prepare to use FacebookFramework.framework
     * Import <FacebookFramework/FacebookFramework.h> where appropriate.
     * Create a new property `Facebook*` and set yourself as the delegate:
-	
-		````		
-		self.facebook = [[Facebook alloc] initWithAppID:APP_ID appSecret:APP_SECRET delegate:self];
-		````
-
-    * Implement the FacebookDelegate protocol:
-
+	    
 4.  Request an authorization token:	
 	* Just list the permissions you need in an set, or [NSSet set] if you don't require special permissions.
 	
