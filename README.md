@@ -9,13 +9,13 @@ FacebookFramework is a Simple and Lightweight framework for Cocoa (OS X, MacOSX)
 How-to-use
 ----------
 
-1.  Create your Facebook app
+1.    Create your Facebook app
 	
     * Go to your [Facebook application page](https://developers.facebook.com/apps/).
     * Select your application in the left-hand column (if you have more than one application) and select Edit App.
     * __Note:__  In section 3 you should use App ID and App Secret	
     
-2.   Build FacebookFramework.framework
+2.    Build FacebookFramework.framework
 
     * Open "FacebookFramework.xcodeproj" and "Build for Archiving" in the Product -> Build menu. This should build both the Debug and Release version. If it does not, check your Build Schemes in Product -> Edit Scheme… Select Build configuration Release
     * Select "FacebookFramework.framework" in the Finder. It should be in the "Release" folder; you probably don't want to embed the Debug version.
@@ -25,7 +25,7 @@ How-to-use
     * Drag "FacebookFramework.framework" to this Copy build phase to ensure it is embedded in your application.
     * Verify that you can build and run your application and there are no linker or runtime errors.
 
-3 .   Prepare to use FacebookFramework.framework
+3.  Prepare to use FacebookFramework.framework
 
     * Import <FacebookFramework/FacebookFramework.h> where appropriate.
     * Create a new property `Facebook*` and set yourself as the delegate:
@@ -37,7 +37,7 @@ How-to-use
         @optional
         - (void) fbAuthWindowWillShow: (id) sender;
 
-4.   Request an authorization token:
+4.  Request an authorization token:
 		
     [self.facebook authenticate:[NSSet setWithObjects: @"read_stream", @"publish_stream", nil] callback:^(NSDictionary *result) {
     
