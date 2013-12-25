@@ -33,11 +33,6 @@ How-to-use
 
     * Implement the FacebookDelegate protocol:
 
-		````
-    	@optional
-	    - (void) fbAuthWindowWillShow: (id) sender;
-	    ````
-	    
 4.  Request an authorization token:	
 	* Just list the permissions you need in an set, or [NSSet set] if you don't require special permissions.
 	
