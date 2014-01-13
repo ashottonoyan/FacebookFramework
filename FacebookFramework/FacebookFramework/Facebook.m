@@ -121,12 +121,11 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
     } else {
         
         if (self.delegate && [self.delegate respondsToSelector:@selector(fbAuthWindowWillShow:)] && ![self.window isVisible]) {
-            
-            [self.window center];
-            [_window makeKeyAndOrderFront:nil];
             [self.delegate fbAuthWindowWillShow:self];
         }
-        
+        [self.window center];
+        [_window makeKeyAndOrderFront:nil];
+        [NSApp activateIgnoringOtherApps:YES];
     }
 }
 
