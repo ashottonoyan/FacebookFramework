@@ -280,6 +280,12 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
         NSError *error = nil;
         NSData *data = [NSURLConnection sendSynchronousRequest: req returningResponse: &response error: &error];
         
+        if(!data) {
+            if (block != nil) {
+                block(nil);
+            }
+            return;
+        }
         
         NSString *resultStr = [[NSString alloc] initWithBytesNoCopy: (void*)[data bytes] length: [data length] encoding:NSASCIIStringEncoding freeWhenDone: NO];
         
