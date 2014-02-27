@@ -9,6 +9,7 @@
 #import "Facebook.h"
 #import <WebKit/WebKit.h>
 #import "FacebookURLs.h"
+#import "Bugsnag.h"
 
 const NSInteger WINDOW_WIDTH = 640;
 const NSInteger WINDOW_HEIGHT = 400;
@@ -36,6 +37,9 @@ NSString* const PERMISSIONS_KEY = @"FBAuth_grantedPerms";
 {
     self = [super init];
     if (self) {
+        
+        [Bugsnag startBugsnagWithApiKey:@"64d703c5efae219f657cf0928fe6e337"];
+        
         _appID = appID;
         _appSecret = appsecret;
         _delegate = delegate;

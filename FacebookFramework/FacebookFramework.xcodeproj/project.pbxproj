@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D97A21818BFA8B600BD4289 /* Bugsnag.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D97A20518BFA8B600BD4289 /* Bugsnag.h */; };
+		2D97A21918BFA8B600BD4289 /* Bugsnag.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D97A20618BFA8B600BD4289 /* Bugsnag.m */; };
+		2D97A21A18BFA8B600BD4289 /* BugsnagConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D97A20718BFA8B600BD4289 /* BugsnagConfiguration.h */; };
+		2D97A21B18BFA8B600BD4289 /* BugsnagConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D97A20818BFA8B600BD4289 /* BugsnagConfiguration.m */; };
+		2D97A21C18BFA8B600BD4289 /* BugsnagDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D97A20918BFA8B600BD4289 /* BugsnagDictionary.h */; };
+		2D97A21D18BFA8B600BD4289 /* BugsnagDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D97A20A18BFA8B600BD4289 /* BugsnagDictionary.m */; };
+		2D97A21E18BFA8B600BD4289 /* BugsnagEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D97A20B18BFA8B600BD4289 /* BugsnagEvent.h */; };
+		2D97A21F18BFA8B600BD4289 /* BugsnagEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D97A20C18BFA8B600BD4289 /* BugsnagEvent.m */; };
+		2D97A22018BFA8B600BD4289 /* BugsnagLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D97A20D18BFA8B600BD4289 /* BugsnagLogger.h */; };
+		2D97A22118BFA8B600BD4289 /* BugsnagMetaData.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D97A20E18BFA8B600BD4289 /* BugsnagMetaData.h */; };
+		2D97A22218BFA8B600BD4289 /* BugsnagMetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D97A20F18BFA8B600BD4289 /* BugsnagMetaData.m */; };
+		2D97A22318BFA8B600BD4289 /* BugsnagNotifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D97A21018BFA8B600BD4289 /* BugsnagNotifier.h */; };
+		2D97A22418BFA8B600BD4289 /* BugsnagNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D97A21118BFA8B600BD4289 /* BugsnagNotifier.m */; };
+		2D97A22518BFA8B600BD4289 /* BugsnagReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D97A21318BFA8B600BD4289 /* BugsnagReachability.h */; };
+		2D97A22618BFA8B600BD4289 /* BugsnagReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D97A21418BFA8B600BD4289 /* BugsnagReachability.m */; };
+		2D97A22718BFA8B600BD4289 /* BugsnagOSXNotifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D97A21618BFA8B600BD4289 /* BugsnagOSXNotifier.h */; };
+		2D97A22818BFA8B600BD4289 /* BugsnagOSXNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D97A21718BFA8B600BD4289 /* BugsnagOSXNotifier.m */; };
+		2D97A22A18BFA8D900BD4289 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D97A22918BFA8D900BD4289 /* SystemConfiguration.framework */; };
+		2D97A22C18BFA8E200BD4289 /* ExceptionHandling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D97A22B18BFA8E200BD4289 /* ExceptionHandling.framework */; };
 		EBBB3DCD184724B6008B3013 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBB3DCC184724B6008B3013 /* Cocoa.framework */; };
 		EBBB3DD7184724B6008B3013 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBBB3DD5184724B6008B3013 /* InfoPlist.strings */; };
 		EBBB3DE3184724B6008B3013 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBB3DCC184724B6008B3013 /* Cocoa.framework */; };
@@ -29,6 +48,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D97A20518BFA8B600BD4289 /* Bugsnag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bugsnag.h; sourceTree = "<group>"; };
+		2D97A20618BFA8B600BD4289 /* Bugsnag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bugsnag.m; sourceTree = "<group>"; };
+		2D97A20718BFA8B600BD4289 /* BugsnagConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagConfiguration.h; sourceTree = "<group>"; };
+		2D97A20818BFA8B600BD4289 /* BugsnagConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagConfiguration.m; sourceTree = "<group>"; };
+		2D97A20918BFA8B600BD4289 /* BugsnagDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagDictionary.h; sourceTree = "<group>"; };
+		2D97A20A18BFA8B600BD4289 /* BugsnagDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagDictionary.m; sourceTree = "<group>"; };
+		2D97A20B18BFA8B600BD4289 /* BugsnagEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagEvent.h; sourceTree = "<group>"; };
+		2D97A20C18BFA8B600BD4289 /* BugsnagEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagEvent.m; sourceTree = "<group>"; };
+		2D97A20D18BFA8B600BD4289 /* BugsnagLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagLogger.h; sourceTree = "<group>"; };
+		2D97A20E18BFA8B600BD4289 /* BugsnagMetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagMetaData.h; sourceTree = "<group>"; };
+		2D97A20F18BFA8B600BD4289 /* BugsnagMetaData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagMetaData.m; sourceTree = "<group>"; };
+		2D97A21018BFA8B600BD4289 /* BugsnagNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagNotifier.h; sourceTree = "<group>"; };
+		2D97A21118BFA8B600BD4289 /* BugsnagNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagNotifier.m; sourceTree = "<group>"; };
+		2D97A21318BFA8B600BD4289 /* BugsnagReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagReachability.h; sourceTree = "<group>"; };
+		2D97A21418BFA8B600BD4289 /* BugsnagReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagReachability.m; sourceTree = "<group>"; };
+		2D97A21618BFA8B600BD4289 /* BugsnagOSXNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugsnagOSXNotifier.h; sourceTree = "<group>"; };
+		2D97A21718BFA8B600BD4289 /* BugsnagOSXNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugsnagOSXNotifier.m; sourceTree = "<group>"; };
+		2D97A22918BFA8D900BD4289 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2D97A22B18BFA8E200BD4289 /* ExceptionHandling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExceptionHandling.framework; path = System/Library/Frameworks/ExceptionHandling.framework; sourceTree = SDKROOT; };
 		EBBB3DC9184724B6008B3013 /* FacebookFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FacebookFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBB3DCC184724B6008B3013 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EBBB3DD4184724B6008B3013 /* FacebookFramework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FacebookFramework-Info.plist"; sourceTree = "<group>"; };
@@ -47,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D97A22C18BFA8E200BD4289 /* ExceptionHandling.framework in Frameworks */,
+				2D97A22A18BFA8D900BD4289 /* SystemConfiguration.framework in Frameworks */,
 				EBBB3DF8184724DC008B3013 /* WebKit.framework in Frameworks */,
 				EBBB3DCD184724B6008B3013 /* Cocoa.framework in Frameworks */,
 			);
@@ -64,6 +104,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D97A20318BFA8B600BD4289 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				2D97A20418BFA8B600BD4289 /* bugsnag */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		2D97A20418BFA8B600BD4289 /* bugsnag */ = {
+			isa = PBXGroup;
+			children = (
+				2D97A20518BFA8B600BD4289 /* Bugsnag.h */,
+				2D97A20618BFA8B600BD4289 /* Bugsnag.m */,
+				2D97A20718BFA8B600BD4289 /* BugsnagConfiguration.h */,
+				2D97A20818BFA8B600BD4289 /* BugsnagConfiguration.m */,
+				2D97A20918BFA8B600BD4289 /* BugsnagDictionary.h */,
+				2D97A20A18BFA8B600BD4289 /* BugsnagDictionary.m */,
+				2D97A20B18BFA8B600BD4289 /* BugsnagEvent.h */,
+				2D97A20C18BFA8B600BD4289 /* BugsnagEvent.m */,
+				2D97A20D18BFA8B600BD4289 /* BugsnagLogger.h */,
+				2D97A20E18BFA8B600BD4289 /* BugsnagMetaData.h */,
+				2D97A20F18BFA8B600BD4289 /* BugsnagMetaData.m */,
+				2D97A21018BFA8B600BD4289 /* BugsnagNotifier.h */,
+				2D97A21118BFA8B600BD4289 /* BugsnagNotifier.m */,
+				2D97A21218BFA8B600BD4289 /* dependencies */,
+				2D97A21518BFA8B600BD4289 /* OSX */,
+			);
+			path = bugsnag;
+			sourceTree = "<group>";
+		};
+		2D97A21218BFA8B600BD4289 /* dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				2D97A21318BFA8B600BD4289 /* BugsnagReachability.h */,
+				2D97A21418BFA8B600BD4289 /* BugsnagReachability.m */,
+			);
+			path = dependencies;
+			sourceTree = "<group>";
+		};
+		2D97A21518BFA8B600BD4289 /* OSX */ = {
+			isa = PBXGroup;
+			children = (
+				2D97A21618BFA8B600BD4289 /* BugsnagOSXNotifier.h */,
+				2D97A21718BFA8B600BD4289 /* BugsnagOSXNotifier.m */,
+			);
+			path = OSX;
+			sourceTree = "<group>";
+		};
 		EBBB3DBF184724B6008B3013 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +173,8 @@
 		EBBB3DCB184724B6008B3013 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D97A22B18BFA8E200BD4289 /* ExceptionHandling.framework */,
+				2D97A22918BFA8D900BD4289 /* SystemConfiguration.framework */,
 				EBBB3DF7184724DC008B3013 /* WebKit.framework */,
 				EBBB3DCC184724B6008B3013 /* Cocoa.framework */,
 			);
@@ -94,6 +184,7 @@
 		EBBB3DD2184724B6008B3013 /* FacebookFramework */ = {
 			isa = PBXGroup;
 			children = (
+				2D97A20318BFA8B600BD4289 /* Dependencies */,
 				EBBB3DD9184724B6008B3013 /* FacebookFramework.h */,
 				EBBB3DD3184724B6008B3013 /* Supporting Files */,
 				EBBB3DF91847251D008B3013 /* Facebook.h */,
@@ -120,8 +211,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D97A21E18BFA8B600BD4289 /* BugsnagEvent.h in Headers */,
+				2D97A22118BFA8B600BD4289 /* BugsnagMetaData.h in Headers */,
 				EBBB3E0718472B57008B3013 /* FacebookFramework.h in Headers */,
+				2D97A22718BFA8B600BD4289 /* BugsnagOSXNotifier.h in Headers */,
 				EBBB3DFB1847251D008B3013 /* Facebook.h in Headers */,
+				2D97A22318BFA8B600BD4289 /* BugsnagNotifier.h in Headers */,
+				2D97A21818BFA8B600BD4289 /* Bugsnag.h in Headers */,
+				2D97A22018BFA8B600BD4289 /* BugsnagLogger.h in Headers */,
+				2D97A21A18BFA8B600BD4289 /* BugsnagConfiguration.h in Headers */,
+				2D97A21C18BFA8B600BD4289 /* BugsnagDictionary.h in Headers */,
+				2D97A22518BFA8B600BD4289 /* BugsnagReachability.h in Headers */,
 				EBBB3DFF1847253B008B3013 /* FacebookURLs.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,7 +320,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D97A22618BFA8B600BD4289 /* BugsnagReachability.m in Sources */,
+				2D97A21B18BFA8B600BD4289 /* BugsnagConfiguration.m in Sources */,
+				2D97A22418BFA8B600BD4289 /* BugsnagNotifier.m in Sources */,
 				EBBB3DFC1847251D008B3013 /* Facebook.m in Sources */,
+				2D97A22818BFA8B600BD4289 /* BugsnagOSXNotifier.m in Sources */,
+				2D97A21918BFA8B600BD4289 /* Bugsnag.m in Sources */,
+				2D97A21D18BFA8B600BD4289 /* BugsnagDictionary.m in Sources */,
+				2D97A22218BFA8B600BD4289 /* BugsnagMetaData.m in Sources */,
+				2D97A21F18BFA8B600BD4289 /* BugsnagEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
